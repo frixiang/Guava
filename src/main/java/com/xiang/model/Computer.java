@@ -1,12 +1,14 @@
 package com.xiang.model;
 
 import com.google.common.collect.ComparisonChain;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  * Created by WIN7 on 2017/11/3.
  */
-@Data
+@Getter
+@Setter
 public class Computer implements Comparable<Computer>{
     private Integer id;
 
@@ -23,5 +25,34 @@ public class Computer implements Comparable<Computer>{
         return ComparisonChain.start()
                 .compare(this.id,o.getId())
                 .compare(this.name,o.getName()).result();
+    }
+
+    public Computer(Integer id, String name, Integer type) {
+        this.id = id;
+        this.name = name;
+        this.type = type;
+    }
+
+    public Computer() {
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        Computer computer = (Computer) o;
+        return computer.getId() == this.id;
+    }
+
+    @Override
+    public int hashCode() {
+        return id;
+    }
+
+    @Override
+    public String toString() {
+        return "Computer{" +
+                "id=" + id +
+                ", type=" + type +
+                ", name='" + name + '\'' +
+                '}';
     }
 }
