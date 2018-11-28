@@ -1,7 +1,8 @@
 package com.xiang.StreamExplore;
 
 import com.alibaba.fastjson.JSON;
-import com.google.common.collect.Maps;
+import com.google.common.base.Function;
+import com.google.common.collect.Multimaps;
 import com.xiang.model.Computer;
 import com.xiang.util.ComputerBuilderUtil;
 import org.junit.Test;
@@ -9,7 +10,6 @@ import org.junit.Test;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
-import java.util.Map;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
