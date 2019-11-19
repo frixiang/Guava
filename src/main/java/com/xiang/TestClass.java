@@ -23,6 +23,7 @@ public class TestClass {
 	}
 
 	public static void main(String[] args) {
+		/**先执行创建singleTon构造函数，count1 = 1,count2 = 0;再初始化count1、count2,此时count1不变、count2变为0***/
 		TestClass singleTon = TestClass.getInstance();
 		System.out.println("count1=" + singleTon.count1);
 		System.out.println("count2=" + singleTon.count2);
