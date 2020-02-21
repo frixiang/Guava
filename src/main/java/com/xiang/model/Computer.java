@@ -23,8 +23,8 @@ public class Computer implements Comparable<Computer>{
      */
     public int compareTo(Computer o) {
         return ComparisonChain.start()
-                .compare(this.id,o.getId())
-                .compare(this.name,o.getName()).result();
+                .compare(this.name,o.getName())
+                .compare(this.id,o.getId()).result();
     }
 
     public Computer(Integer id, String name, Integer type) {
