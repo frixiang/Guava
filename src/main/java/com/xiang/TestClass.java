@@ -16,6 +16,8 @@ public class TestClass {
 	private TestClass() {
 		count1++;
 		count2++;
+		System.out.println("count1=" + count1);
+		System.out.println("count2=" + count2);
 	}
 
 	public static TestClass getInstance() {
@@ -23,7 +25,9 @@ public class TestClass {
 	}
 
 	public static void main(String[] args) {
-		/**先执行创建singleTon构造函数，count1 = 1,count2 = 0;再初始化count1、count2,此时count1不变、count2变为0***/
+		/**
+		 * 初始化顺序依次是（静态变量、静态初始化块）>（变量、初始化块）>构造器
+		 * 因此先执行创建singleTon的构造函数，初始化count1 = 1,count2 = 1;再初始化静态成员变量count1、count2,此时count1未赋值，因此不变、count2赋值为为0***/
 		TestClass singleTon = TestClass.getInstance();
 		System.out.println("count1=" + singleTon.count1);
 		System.out.println("count2=" + singleTon.count2);
